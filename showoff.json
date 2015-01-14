@@ -1,16 +1,28 @@
 {
-  "name": "Training 2015",
-  "author": "NETWAYS Training-Center",
-  "authorshort": "hplatzhalter",
-  "eventLocation": "Hier im Hotel XY",
+  "name": "NETWAYS Training",
+  "date": "01.01.-02.01.2015",
+  "location": "Nuremberg", 
+  "author": "Markus Waldmüller",
+  "release": "1.1",
+
+  "favicon": "image/global/favicon.ico",
+  "logo": "/global/_images/netways/netways-logo-1366.png",
+
+  "protected": ["presenter", "onepage", "print"],
+  "user": "netways",
+  "password": "awesome",
 
   "templates":{
     "default":"templates/default.tpl"
   },
 
   "sections": [
-    {"section":"Pre"},
+    {"section":"Pre/Title"},
+    "Pre/Staff/MW.md",
+    {"section":"Pre/NETWAYS"},
+
+    {"section":"Test"},
+
     {"section":"Post"}
   ]
 }
-
