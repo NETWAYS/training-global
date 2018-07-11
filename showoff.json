@@ -7,18 +7,19 @@
   "favicon": "global/favicon.ico",
 
   "protected": ["presenter", "onepage", "print"],
+
   "user": "netways",
   "password": "awesome",
 
   "templates":{
-    "default":"layouts/netways.tpl"
+    "default": "layouts/netways.tpl"
   },
 
   "sections": [
-    {"section":"pre/title"},
-    {"section":"pre/netways"},
-    {"section":"pre/hints"},
+    {"section": "pre/title"},
+    {"section": "pre/netways"},
+    {"section": "pre/hints"},
 
-    {"section":"post"}
+    {"section": "post"}
   ]
 }
