@@ -51,7 +51,7 @@ After this step you are able to copy files into the directory which are not capt
 ### 3. Link stylesheet to root level
 
 ```bash
-$ ln -s global/netways.css
+$ ln -s global/layouts/netways.css
 ```
 
 This step seems ugly and we totally agree with you. In order to print and convert the training slides into pdf, this
@@ -63,7 +63,7 @@ step is absolutely needed to succeed.
 { 
   "name": "My awesome training",
   "subtitle": "Train awesome stuff",
-  "author": "Eduard Zimmermann & Hans Meiser",
+  "author": "Colt Seavers & Howie Munson",
   "release": "0.9.0",
 
   "favicon": "image/global/favicon.ico",
@@ -78,14 +78,14 @@ step is absolutely needed to succeed.
   },
 
   "sections": [
-   {"section":"global/pre/title"},
-   
-   {"section":"trainer"},
-   
-   {"section":"global/pre/netways"},
-   {"section":"global/pre/hints"},
+   {"section": "global/pre/title"},
+   {"section": "trainer"},
+   {"section": "global/pre/netways"},
+   {"section": "global/pre/hints"},
 
-   {"section":"global/post"}
+   {"section": "sections/..."},
+
+   {"section": "global/post"}
   ]
 }
 ```
@@ -93,7 +93,7 @@ step is absolutely needed to succeed.
 After the file is created you're able to start the slide deck (showoff):
 
 ```bash
-$ showoff serve --review --verbose
+$ showoff serve
 ```
 
 ![Screenshot][screenshot1]
