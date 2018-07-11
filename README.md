@@ -99,3 +99,12 @@ $ showoff serve
 ![Screenshot][screenshot1]
 
 [screenshot1]:_images/doc/awesome-training.png
+
+## Update global directory from GitHub
+
+```bash
+$ git fetch global
+$ git subtree pull --squash --prefix=global/ global master
+```
+
+Please make sure that no changed files present or staged commits pending.
