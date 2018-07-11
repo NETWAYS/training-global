@@ -1,28 +1,24 @@
 {
   "name": "NETWAYS Training",
-  "date": "01.01.-02.01.2015",
-  "location": "Nuremberg", 
-  "author": "Markus Waldmüller",
-  "release": "1.1",
+  "subtitle": "Open Source Training",
+  "author": "Open Source Community",
+  "release": "v0.0.1",
 
-  "favicon": "image/global/favicon.ico",
-  "logo": "/global/_images/netways/netways-logo-1366.png",
+  "favicon": "global/favicon.ico",
 
   "protected": ["presenter", "onepage", "print"],
   "user": "netways",
   "password": "awesome",
 
   "templates":{
-    "default":"templates/default.tpl"
+    "default":"layouts/netways.tpl"
   },
 
   "sections": [
-    {"section":"Pre/Title"},
-    "Pre/Staff/MW.md",
-    {"section":"Pre/NETWAYS"},
+    {"section":"pre/title"},
+    {"section":"pre/netways"},
+    {"section":"pre/hints"},
 
-    {"section":"Test"},
-
-    {"section":"Post"}
+    {"section":"post"}
   ]
 }

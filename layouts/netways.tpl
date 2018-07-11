@@ -5,6 +5,6 @@
 ~~~CONTENT~~~
 
 <div class="net-footer">
-    <p>www.netways.de // blog.netways.de // @netways</p>
-    <p>We love Open Source</p>
+    <p>Open Source Training</p>
+    <p>by NETWAYS GmbH (netways.de)</p>
 </div>
