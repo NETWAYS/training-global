@@ -47,7 +47,7 @@ printsolutions () {
 
 setlayout () {
   find . -type l -maxdepth 1 -delete
-  ln -s global/$1.css .
+  ln -s global/layouts/$1.css .
 }
 
 # Wizard
