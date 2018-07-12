@@ -1,6 +1,8 @@
 FROM ubuntu:bionic
 LABEL maintainer="support@netways.de"
 
+ARG TEMP_DIR=/tmp
+
 WORKDIR /training
 
 # basic showoff and patched wkhtmltopdf dependencies
@@ -31,10 +33,11 @@ RUN apt-get update \
 #   && ln -s /usr/bin/gem1.9.3 /etc/alternatives/gem
 
 # wkhtmltopdf needs a patched QT version
-RUN cd $HOME \
+RUN cd $TEMP_DIR \
   && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz \
   && tar vxf wkhtmltox-0.12.3_linux-generic-amd64.tar.xz \
-  && cp wkhtmltox/bin/wk* /usr/local/bin/
+  && cp wkhtmltox/bin/wk* /usr/local/bin/ \
+  && rm -rf $TEMP_DIR/wkhtml*
 
 RUN gem install showoff --version=0.19.6
 
