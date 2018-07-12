@@ -47,7 +47,7 @@ printsolutions () {
 
 setlayout () {
   find . -type l -maxdepth 1 -delete
-  ln -s global/layouts/$1.css .
+  ln -s global/$1.css .
 }
 
 # Wizard
@@ -103,7 +103,7 @@ elif [[ $MODE == print ]]; then
 
   echo -e "
    [1] Handouts
-   [2] Handouts & Exercises
+   [2] Handouts & Solutions
    [3] Handouts & Exercises & Solutions
    [4] Exercises & Solutions\n"
 
@@ -117,14 +117,14 @@ elif [[ $MODE == print ]]; then
     PRINT="${PRINT:-$PRINT_DEFAULT}"
   done
 
-  VERSION_DEFAULT=0.0.0
+  VERSION_DEFAULT=`grep release showoff.json | cut -f2 -d: | tr -d '"' | tr -d " " | tr -d ","`
   read -p "Which version? (Default: "$VERSION_DEFAULT"): " VERSION
   VERSION="${VERSION:-$VERSION_DEFAULT}"
 
   case "$PRINT" in
     1) printhandouts $VERSION;;
     2) printhandouts $VERSION
-       printexercises $VERSION;;
+       printsolutions $VERSION;;
     3) printhandouts $VERSION
        printexercises $VERSION
        printsolutions $VERSION;;
