@@ -96,10 +96,6 @@ After the file is created you're able to start the slide deck (showoff):
 $ showoff serve
 ```
 
-![Screenshot][screenshot1]
-
-[screenshot1]:_images/doc/awesome-training.png
-
 ## Update global directory from GitHub
 
 ```bash
@@ -108,3 +104,31 @@ $ git subtree pull --squash --prefix=global/ global master
 ```
 
 Please make sure that no changed files present or staged commits pending.
+
+## Using docker to build and serve the slide deck
+
+### Run showoff
+
+```bash
+$ docker run -it --rm -v "$PWD:/training" -p "9090:9090" \
+ netways/showoff:0.19.6 \
+ showoff serve
+```
+
+### Build static html files
+
+```bash
+docker run -it --rm -v "$PWD:/training" \
+  netways/showoff:0.19.6 \
+  showoff static print
+```
+
+### Create PDF from static html files
+
+```bash
+docker run -it --rm -v "$PWD:/training" \
+  netways/showoff:0.19.6 \
+  wkhtmltopdf -s A5 --print-media-type \
+  --footer-left \[page\] --footer-right '© NETWAYS' \
+  static/index.html test.pdf
+```
