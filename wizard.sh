@@ -4,17 +4,22 @@ CLANG=C.UTF-8
 IMAGE=netways/showoff:0.19.6
 CNAME=showoff
 TRAINING=`basename "$DIR"`
+DOCKER=${DOCKER:-$(command -v docker2)}
+
+# Begin
+
+if [[ ! -x $DOCKER ]]; then
+  echo "Command 'docker' not found, exit"
+  exit 1
+fi
 
 # Functions
 
 execdocker () {
-  if [ -n $(docker ps -aq -f name=$CNAME) ]; then
-    docker rm -f $CNAME
-  fi
-
   docker run \
     -it \
     --name=$CNAME \
+    --rm \
     -p 9090:9090 \
     -v "$DIR:/training" \
     -e "LANG=$CLANG" \
