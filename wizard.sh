@@ -1,22 +1,18 @@
 #!/bin/bash
-DIR=`pwd`
-CLANG=C.UTF-8
-IMAGE=netways/showoff:0.19.6
-CNAME=showoff
-TRAINING=`basename "$DIR"`
+DIR=$(pwd)
+CLANG=${CLANG:-C.UTF-8}
+IMAGE=${IMAGE:-netways/showoff:0.19.6}
+CNAME=${CNAME:-showoff}
+TRAINING=${TRAINING:-$(basename "$DIR")}
 DOCKER=${DOCKER:-$(command -v docker)}
-
-# Begin
-
-if [[ ! -x $DOCKER ]]; then
-  echo "Command 'docker' not found, exit"
-  exit 1
-fi
+GIT=${GIT:-$(command -v git)}
+SCRIPT_DIR=$(cd $(dirname $0); pwd -P)
+NO_RESET=${NO_RESET:-""}
 
 # Functions
 
 execdocker () {
-  docker run \
+  $DOCKER run \
     -it \
     --name=$CNAME \
     --rm \
@@ -54,6 +50,36 @@ setlayout () {
   find . -type l -maxdepth 1 -delete
   ln -s global/layouts/$1.css .
 }
+
+reset () {
+  CHANGES=$($GIT status --porcelain $SCRIPT_DIR | grep -v wizard)
+  if [[ -n $CHANGES ]]; then
+    if [[ -n $NO_RESET ]]; then
+      echo "Git has changes but NO_RESET was provided, abort"
+    else
+      echo ""
+      echo -n "There are changes in '$SCRIPT_DIR', reset ... "
+      $GIT status --porcelain $SCRIPT_DIR | grep -v 'wizard' | cut -f3 -d ' ' | xargs $GIT checkout HEAD --
+      echo "done"
+    fi
+  fi
+
+  exit 0
+}
+
+# Begin
+
+trap "reset" EXIT
+
+if [[ ! -x $DOCKER ]]; then
+  echo "Command 'docker' not found, exit"
+  exit 1
+fi
+
+if [[ ! -x $GIT ]]; then
+  echo "Command 'git' not found, exit"
+  exit 1
+fi
 
 # Wizard
 
