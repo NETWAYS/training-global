@@ -118,7 +118,7 @@ $ docker run -it --rm -v "$PWD:/training" -p "9090:9090" \
 ### Build static html files
 
 ```bash
-docker run -it --rm -v "$PWD:/training" \
+$ docker run -it --rm -v "$PWD:/training" \
   netways/showoff:0.19.6 \
   showoff static print
 ```
@@ -126,9 +126,43 @@ docker run -it --rm -v "$PWD:/training" \
 ### Create PDF from static html files
 
 ```bash
-docker run -it --rm -v "$PWD:/training" \
+$ docker run -it --rm -v "$PWD:/training" \
   netways/showoff:0.19.6 \
   wkhtmltopdf -s A5 --print-media-type \
   --footer-left \[page\] --footer-right '© NETWAYS' \
   static/index.html test.pdf
+```
+
+### NETWAYS Training Wizard
+
+Alternatively you can simply run the NETWAYS training wizard:
+
+```
+$ ./global/wizard.sh
+###########################
+  NETWAYS Training Wizard  
+###########################
+
+### LAYOUT ###
+
+  [1] NETWAYS
+  [2] OSMC
+  [3] OSDC
+  [4] OSBConf
+
+Which Layout? [1-4] (Default: 1): 
+
+### MODE ###
+
+Which mode? [serve/print] (Default: serve): print
+
+### PRINT ###
+
+   [1] Handouts
+   [2] Handouts & Solutions
+   [3] Handouts & Exercises & Solutions
+   [4] Exercises & Solutions
+
+What to print? [1-4] (Default: 2): 
+Which version? (Default: 2.1.1): 
 ```
