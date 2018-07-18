@@ -12,6 +12,10 @@ NO_RESET=${NO_RESET:-""}
 # Functions
 
 execdocker () {
+  if [ -n $($DOCKER ps -aq -f name=$CNAME) ]; then
+    $DOCKER rm -f $CNAME
+  fi
+
   $DOCKER run \
     -it \
     --name=$CNAME \
