@@ -6,5 +6,5 @@
 
 <div class="net-footer">
     <p>Open Source Training</p>
-    <p>by NETWAYS GmbH (netways.de)</p>
+    <p>by NETWAYS (netways.de)</p>
 </div>
