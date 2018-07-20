@@ -66,7 +66,7 @@ step is absolutely needed to succeed.
   "author": "Colt Seavers & Howie Munson",
   "release": "0.9.0",
 
-  "favicon": "image/global/favicon.ico",
+  "favicon": "global/favicon.ico",
 
   "protected": ["presenter", "onepage", "print"],
 
@@ -78,9 +78,9 @@ step is absolutely needed to succeed.
   },
 
   "sections": [
-   {"section": "global/pre/title"},
+   {"section": "global/pre/netways/title"},
    {"section": "trainer"},
-   {"section": "global/pre/netways"},
+   {"section": "global/pre/netways/about"},
    {"section": "global/pre/hints"},
 
    {"section": "sections/..."},
