@@ -16,9 +16,9 @@
   },
 
   "sections": [
-    {"section": "pre/title"},
+    {"section": "pre/netways/title"},
     {"section": "trainer"},
-    {"section": "pre/netways"},
+    {"section": "pre/netways/about"},
     {"section": "pre/hints"},
 
     {"section": "post"}

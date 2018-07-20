@@ -109,8 +109,8 @@
 
   .subsection .net-header,
   .subsectionnonum .net-header,
-  #Pre_Title_01_Title1 .net-header,
-  #global_Pre_Title_01_Title1 .net-header {
+  #pre_osmc_title_00_title1 .net-header,
+  #global_pre_osmc_title_00_title1 .net-header {
     border-bottom: .0625em solid black;
     padding-bottom: 0;
   }
@@ -165,8 +165,8 @@
     height: 99%; /* The negative margin workaround does not work with wkhtmltopdf.. */
   }
 
-  #Pre_Title_01_Title1 .net-header,
-  #global_Pre_Title_01_Title1 .net-header {
+  #pre_osmc_title_00_title1 .net-header,
+  #global_pre_osmc_title_00_title1 .net-header {
     display: none;
   }
 
@@ -204,11 +204,11 @@
     background: black;
   }
 
-  .title-subtitle {
+  .title-location {
     overflow: auto;
   }
 
-  .title-subtitle p {
+  .title-location p {
     float: right;
     margin: 1em 0;
     padding: .25em;
@@ -232,7 +232,8 @@
   }
 
   .title-cover {
-    margin: 1em;
+    margin: 0.5em;
+    margin-top: 4em;
     padding: 1em;
     height: 30em;
     color: white;
