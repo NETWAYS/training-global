@@ -204,11 +204,11 @@
     background: black;
   }
 
-  .title-location {
+  .title-subtitle {
     overflow: auto;
   }
 
-  .title-location p {
+  .title-subtitle p {
     float: right;
     margin: 1em 0;
     padding: .25em;
