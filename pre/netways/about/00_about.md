@@ -19,19 +19,19 @@
 !SLIDE noprint
 # NETWAYS Solutions
 
-.margin-top-1-5 <img src="../_images/solutions.png" style="width:80%" alt="NETWAYS Solutions">
+<center><img src="../_images/solutions.png" style="width:800px;height:454px;" alt="NETWAYS Solutions"/></center>
 
 
 !SLIDE noprint
 # NETWAYS Consulting Customers
 
-.margin-top-1-5 <img src="../_images/consulting_customers.png" style="width:80%" alt="NETWAYS Consulting Customers">
+<center><img src="../_images/consulting_customers.png" style="width:800px;height:454px;" alt="NETWAYS Consulting Customers"/></center>
 
 
 !SLIDE noprint
 # NETWAYS Hosting Customers
 
-.margin-top-1-5 <img src="../_images/hosting_customers.png" style="width:80%" alt="NETWAYS Hosting Customers">
+<center><img src="../_images/hosting_customers.png" style="width:800px;height:454px;" alt="NETWAYS Hosting Customers"/></center>
 
 
 !SLIDE noprint
