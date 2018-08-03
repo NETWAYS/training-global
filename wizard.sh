@@ -12,8 +12,8 @@ NO_RESET=${NO_RESET:-""}
 # Functions
 
 execdocker () {
-  if [ -n $($DOCKER ps -aq -f name=$CNAME) ]; then
-    $DOCKER rm -f $CNAME
+  if [[ -n $($DOCKER ps -aq -f name=$CNAME 2> /dev/null) ]]; then
+    $DOCKER rm -f $CNAME 2> /dev/null
   fi
 
   $DOCKER run \
