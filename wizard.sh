@@ -12,8 +12,8 @@ NO_RESET=${NO_RESET:-""}
 # Functions
 
 execdocker () {
-  if [[ -n $($DOCKER ps -aq -f name=$CNAME 2> /dev/null) ]]; then
-    $DOCKER rm -f $CNAME 2> /dev/null
+  if [ -n $($DOCKER ps -aq -f name=$CNAME) ]; then
+    $DOCKER rm -f $CNAME
   fi
 
   $DOCKER run \
@@ -124,16 +124,20 @@ esac
 
 setlayout $LAYOUT
 
-echo -e "\n### MODE ###\n"
+echo -e "\n### MODE ###"
 
-MODE_DEFAULT=serve
-read -p "Which mode? [serve/print] (Default: "$MODE_DEFAULT"): " MODE
+echo -e "
+ [1] serve
+ [2] print\n"
+
+MODE_DEFAULT=1
+read -p "Which mode? [1-2] (Default: "$MODE_DEFAULT"): " MODE
 MODE="${MODE:-$MODE_DEFAULT}"
 
-if [[ $MODE == serve ]]; then
+if [[ $MODE == 1 ]]; then
   echo "--- RUN SHOWOFF SERVE ---"
   execdocker "showoff serve"
-elif [[ $MODE == print ]]; then
+elif [[ $MODE == 2 ]]; then
   echo -e "\n### PRINT ###"
 
   echo -e "
