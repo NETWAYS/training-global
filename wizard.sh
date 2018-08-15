@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 DIR=$(pwd)
 CLANG=${CLANG:-C.UTF-8}
 IMAGE=${IMAGE:-netways/showoff:0.19.6}
@@ -51,7 +51,7 @@ printsolutions () {
 }
 
 setlayout () {
-  find . -type l -maxdepth 1 -delete
+  find . -type l -name *.css -maxdepth 1 -delete
   ln -s global/layouts/$1.css .
 }
 
