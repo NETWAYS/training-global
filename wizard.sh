@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 DIR=$(pwd)
 CLANG=${CLANG:-C.UTF-8}
 IMAGE=${IMAGE:-netways/showoff:0.19.6}
@@ -54,26 +54,6 @@ setlayout () {
   find . -type l -maxdepth 1 -delete
   ln -s global/layouts/$1.css .
 }
-
-reset () {
-  CHANGES=$($GIT status --porcelain $SCRIPT_DIR | grep -v wizard)
-  if [[ -n $CHANGES ]]; then
-    if [[ -n $NO_RESET ]]; then
-      echo "Git has changes but NO_RESET was provided, abort"
-    else
-      echo ""
-      echo -n "There are changes in '$SCRIPT_DIR', reset ... "
-      $GIT status --porcelain $SCRIPT_DIR | grep -v 'wizard' | cut -f3 -d ' ' | xargs $GIT checkout HEAD --
-      echo "done"
-    fi
-  fi
-
-  exit 0
-}
-
-# Begin
-
-trap "reset" EXIT
 
 if [[ ! -x $DOCKER ]]; then
   echo "Command 'docker' not found, exit"
