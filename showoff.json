@@ -16,12 +16,12 @@
   },
 
   "sections": [
-    {"section": "pre/netways/title"},
-    {"section": "pre/toc"},
+    {"section": "global/pre/netways/title"},
+    {"section": "global/pre/toc"},
     {"section": "trainer"},
-    {"section": "pre/netways/about"},
-    {"section": "pre/hints"},
+    {"section": "global/pre/netways/about"},
+    {"section": "global/pre/hints"},
 
-    {"section": "post"}
+    {"section": "global/post"}
   ]
 }
