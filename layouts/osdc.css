@@ -125,7 +125,7 @@
   .content .net-header + h1:not(.section-title) {
     margin: 0;
     color: white;
-    background: #27A737;
+    background: #2d2e52;
   }
 
   .net-footer {
@@ -133,7 +133,7 @@
     bottom: 0;
     width: 100%;
     color: white;
-    background: #27A737;
+    background: #2d2e52;
   }
 
   .net-footer * {
@@ -177,9 +177,9 @@
 
   .subsection .net-header + h1:not(.section-title),
   .subsectionnonum .net-header + h1:not(.section-title) {
-    white-space: nowrap; /* TODO: Why?? Only wkhtmltopdf requires this.. */
+    width: 13.6em; /* Without this explicit slide max-width wkhtmltopdf is unable to produce proper line breaks */
     color: white;
-    background: #27A737;
+    background: #2d2e52;
   }
 
   .net-footer {
@@ -215,7 +215,7 @@
     padding: .25em;
     font-size: 1.5em;
     color: black;
-    background: #27A737;
+    background: #2d2e52;
   }
 
   .title-author p {
@@ -238,7 +238,7 @@
     padding: 1em;
     height: 25.5em;
     color: white;
-    background: #27A737;
+    background: #2d2e52;
   }
 
   .title-name {
@@ -325,7 +325,7 @@
   }
 
   a, a:visited {
-    color: #27A737;
+    color: #2d2e52;
     text-decoration: none;
   }
 
@@ -356,6 +356,11 @@
     max-width: 100%;
   }
 
+  .content > ul,
+  .content > ol {
+    margin-left: 0;
+  }
+
   /* Slide Styles */
 
   .bullets > ul {
@@ -372,6 +377,10 @@
   .bullets > ul > li > p,
   .smbullets > ul > li > p {
     margin: 0;
+  }
+
+  ul ol, ol ul, ul ul, ol ol {
+    padding-left: 1em;
   }
 
   /* Legacy styles start - For backward compliance with slides created using showoff v0.9.11.1 */
@@ -491,7 +500,7 @@
   }
 
   a, a:visited {
-    color: #27A737;
+    color: #2d2e52;
     text-decoration: none;
   }
 
@@ -528,6 +537,11 @@
     text-align: left;
   }
 
+  .content > ul,
+  .content > ol {
+    margin-left: 0;
+  }
+
   /* Slide Styles */
 
   .bullets > ul {
@@ -547,9 +561,13 @@
     margin: 0;
   }
 
+  ul ol, ol ul, ul ul, ol ol {
+    padding-left: 1em;
+  }
+
   .content > pre, .handouts > pre, .content > form > pre {
     font-size: 120%;
-    margin: 0 2em;
+    margin: 0;
   }
   .content > pre > code, .handouts > pre > code, .content > form > pre > code {
     overflow: visible;
