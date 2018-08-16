@@ -157,12 +157,13 @@
   }
 
   .net-header {
-    height: 6.1875em;
+    height: 4em;
     border-bottom: .0625em solid black;
   }
 
   .net-header img {
-    height: 99%; /* The negative margin workaround does not work with wkhtmltopdf.. */
+    height: 80%; /* The negative margin workaround does not work with wkhtmltopdf.. */
+    width: 7em;
   }
 
   #pre_netways_title_00_title1 .net-header,
@@ -235,7 +236,7 @@
     margin: 0.5em;
     margin-top: 4em;
     padding: 1em;
-    height: 30em;
+    height: 31em;
     color: white;
     background: #FA5C0D;
   }
