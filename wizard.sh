@@ -76,10 +76,10 @@ echo "###########################"
 echo -e "\n### LAYOUT ###"
 
 echo -e "
-  [1] NETWAYS
-  [2] OSMC
-  [3] OSDC
-  [4] OSBConf\n"
+   [1] NETWAYS
+   [2] OSMC
+   [3] OSDC
+   [4] OSBConf\n"
 
 LAYOUT_DEFAULT=1
 read -p "Which Layout? [1-4] (Default: "$LAYOUT_DEFAULT"): " LAYOUT
@@ -107,8 +107,8 @@ setlayout $LAYOUT
 echo -e "\n### MODE ###"
 
 echo -e "
- [1] serve
- [2] print\n"
+   [1] serve
+   [2] print\n"
 
 MODE_DEFAULT=1
 read -p "Which mode? [1-2] (Default: "$MODE_DEFAULT"): " MODE
