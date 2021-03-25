@@ -37,10 +37,10 @@
 !SLIDE noprint
 # NETWAYS Conferences & Camps
 
-<center><img src="../_images/overview_conferences.png" style="width:800px;height:566px;" alt="NETWAYS Conferences & Camps"/></center>
+<center><img src="../_images/overview_conferences.png" style="width:800px;height:450px;" alt="NETWAYS Conferences & Camps"/></center>
 
 
 !SLIDE noprint
 # NETWAYS Trainings & Workshops
 
-<center><img src="../_images/overview_trainings.png" style="width:800px;height:566px;" alt="NETWAYS Trainings & Workshops"/></center>
+<center><img src="../_images/overview_trainings.png" style="width:800px;height:450px;" alt="NETWAYS Trainings & Workshops"/></center>
