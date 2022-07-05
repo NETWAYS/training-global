@@ -45,6 +45,11 @@ RUN set -ex; \
 ARG showoff_version=0.20.3
 RUN gem install showoff --version="$showoff_version"
 
+ADD extras/showoff.patch /tmp/showoff.patch
+
+RUN cd /var/lib/gems/*/gems/showoff-*/lib \
+	&& patch -p1 < /tmp/showoff.patch
+
 EXPOSE 9090
 
 CMD ["showoff", "serve"]
