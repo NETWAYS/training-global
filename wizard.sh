@@ -4,7 +4,7 @@ CLANG=${CLANG:-C.UTF-8}
 IMAGE=${IMAGE:-netways/showoff:0.19.6}
 CNAME=${CNAME:-showoff}
 TRAINING=${TRAINING:-$(basename "$DIR")}
-DOCKER=${DOCKER:-$(command -v docker)}
+RUNTIME=${RUNTIME:-$(command -v docker)}
 GIT=${GIT:-$(command -v git)}
 SCRIPT_DIR=$(cd $(dirname $0); pwd -P)
 NO_RESET=${NO_RESET:-""}
@@ -12,11 +12,11 @@ NO_RESET=${NO_RESET:-""}
 # Functions
 
 execdocker () {
-  if [[ -n $($DOCKER ps -aq -f name=$CNAME 2> /dev/null) ]]; then
-    $DOCKER rm -f $CNAME 2> /dev/null
+  if [[ -n $($RUNTIME ps -aq -f name=$CNAME 2> /dev/null) ]]; then
+    $RUNTIME rm -f $CNAME 2> /dev/null
   fi
 
-  $DOCKER run \
+  $RUNTIME run \
     -it \
     --name=$CNAME \
     --rm \
@@ -55,8 +55,8 @@ setlayout () {
   ln -s global/layouts/$1.css .
 }
 
-if [[ ! -x $DOCKER ]]; then
-  echo "Command 'docker' not found, exit"
+if [[ ! -x $RUNTIME ]]; then
+  echo "Command '${RUNTIME}' not found, exit"
   exit 1
 fi
 
