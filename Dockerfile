@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM docker.io/ubuntu:focal
 LABEL maintainer="support@netways.de"
 
 ARG TEMP_DIR=/tmp
@@ -44,4 +44,3 @@ RUN gem install showoff --version=0.19.6
 EXPOSE 9090
 
 CMD ["showoff", "serve"]
-
