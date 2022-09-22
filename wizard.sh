@@ -55,6 +55,9 @@ setlayout () {
   ln -s global/layouts/$1.css .
 }
 
+# Create reference if it doesn't exist
+ln -sf . global
+
 if [[ ! -x $RUNTIME ]]; then
   echo "Command '${RUNTIME}' not found, exit"
   exit 1
