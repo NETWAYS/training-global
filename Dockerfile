@@ -42,7 +42,7 @@ RUN set -ex; \
     && rm -f /tmp/wkhtmltox.tar.xz
 
 # Install showoff Gem
-ARG showoff_version=0.19.6
+ARG showoff_version=0.20.3
 RUN gem install showoff --version="$showoff_version"
 
 EXPOSE 9090
