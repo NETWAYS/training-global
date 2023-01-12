@@ -25,21 +25,17 @@ RUN set -ex; \
       libfontconfig1-dev \
       libfreetype6-dev \
       fontconfig \
+      libjpeg-turbo8 \
+      xfonts-75dpi \
+      xfonts-base \
   && apt-get clean \
   && rm -r /var/lib/apt/lists/*
 
 # wkhtmltopdf needs a patched QT version
-ARG wkhtmltox_sha256_checksum="40bc014d0754ea44bb90e733f03e7c92862f7445ef581e3599ecc00711dddcaa"
-ARG wkhtmltox_url="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz"
-
-# Download, verify and install wkhtmltox
+ADD vendor/wkhtmltox_0.12.5-1.focal_amd64.deb /tmp/wkhtmltox_0.12.5-1.focal_amd64.deb
 RUN set -ex; \
-    curl -sSL "${wkhtmltox_url}" --output /tmp/wkhtmltox.tar.xz\
-    && echo "${wkhtmltox_sha256_checksum}  /tmp/wkhtmltox.tar.xz" | sha256sum -c - \
-    \
-    && tar vxf /tmp/wkhtmltox.tar.xz -C /usr/local/bin/ --strip-components=2 wkhtmltox/bin/wkhtmltoimage \
-    && tar vxf /tmp/wkhtmltox.tar.xz -C /usr/local/bin/ --strip-components=2 wkhtmltox/bin/wkhtmltopdf \
-    && rm -f /tmp/wkhtmltox.tar.xz
+    dpkg -i /tmp/wkhtmltox_0.12.5-1.focal_amd64.deb \
+    && rm -f /tmp/wkhtmltox_0.12.5-1.focal_amd64.deb
 
 # Install showoff Gem
 ARG showoff_version=0.20.3
