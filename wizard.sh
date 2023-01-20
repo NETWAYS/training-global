@@ -1,7 +1,7 @@
 #!/bin/bash
 DIR=$(pwd)
 CLANG=${CLANG:-C.UTF-8}
-IMAGE=${IMAGE:-netways/showoff:0.19.6}
+IMAGE=${IMAGE:-netways/showoff:0.20.3}
 CNAME=${CNAME:-showoff}
 TRAINING=${TRAINING:-$(basename "$DIR")}
 RUNTIME=${RUNTIME:-$(command -v docker)}
