@@ -107,6 +107,17 @@ esac
 
 setlayout $LAYOUT
 
+echo -e "\n### TRAINER ###"
+
+read -p "Trainernames?: " TRAINER
+TRAINER="${TRAINER}"
+
+cat <<EOF > trainer/00_title.md
+!SLIDE noprint subsectionnonum
+# Trainer
+$TRAINER
+EOF
+
 echo -e "\n### MODE ###"
 
 echo -e "
