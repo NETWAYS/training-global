@@ -40,6 +40,10 @@ RUN set -ex; \
 ARG showoff_version=0.20.4
 RUN gem install showoff --version="$showoff_version"
 
+# uri v0.11.0 (installed as dependency for showoff) contains a CVE
+# so we upgrade, delete the default, and clean up
+RUN gem update uri && rm /usr/lib/ruby/gems/3.1.0/specifications/default/uri-0.11.0.gemspec && gem cleanup uri
+
 EXPOSE 9090
 
 CMD ["showoff", "serve"]
