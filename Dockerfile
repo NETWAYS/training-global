@@ -1,4 +1,4 @@
-FROM docker.io/ubuntu:focal
+FROM docker.io/ubuntu:lunar
 LABEL maintainer="support@netways.de"
 
 WORKDIR /training
@@ -17,8 +17,7 @@ RUN set -ex; \
       xz-utils \
       zlib1g \
       zlib1g-dev \
-      libssl1.1 \
-      libssl-dev \
+      libssl3 \
       libxrender-dev \
       libx11-dev \
       libxext-dev \
@@ -32,10 +31,10 @@ RUN set -ex; \
   && rm -r /var/lib/apt/lists/*
 
 # wkhtmltopdf needs a patched QT version
-ADD vendor/wkhtmltox_0.12.5-1.focal_amd64.deb /tmp/wkhtmltox_0.12.5-1.focal_amd64.deb
+ADD vendor/wkhtmltox_0.12.6.1-2.jammy_amd64.deb /tmp/wkhtmltox.deb
 RUN set -ex; \
-    dpkg -i /tmp/wkhtmltox_0.12.5-1.focal_amd64.deb \
-    && rm -f /tmp/wkhtmltox_0.12.5-1.focal_amd64.deb
+    dpkg -i /tmp/wkhtmltox.deb \
+    && rm -f /tmp/wkhtmltox.deb
 
 # Install showoff Gem
 ARG showoff_version=0.20.3
