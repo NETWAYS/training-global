@@ -5,6 +5,8 @@ resides here.
 
 ## How to use
 
+Install and initialize `git-lfs` on your system.
+
 ### 1. Add global resource directory to your project
 
 The global resource dir is introduced by using git subtree mechanism. This keeps the training repository clear from
