@@ -31,9 +31,10 @@ RUN set -ex; \
   && rm -r /var/lib/apt/lists/*
 
 # wkhtmltopdf needs a patched QT version
-ADD vendor/wkhtmltox_0.12.6.1-2.jammy_amd64.deb /tmp/wkhtmltox.deb
+ARG wkhtmltox_url=https://github.com/NETWAYS/training-global/releases/download/v0.20.4/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 RUN set -ex; \
-    dpkg -i /tmp/wkhtmltox.deb \
+    curl -sSL "${wkhtmltox_url}" --output /tmp/wkhtmltox.deb \
+    && dpkg -i /tmp/wkhtmltox.deb \
     && rm -f /tmp/wkhtmltox.deb
 
 # Install showoff Gem
