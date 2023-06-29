@@ -5,6 +5,8 @@ resides here.
 
 ## How to use
 
+Install and initialize `git-lfs` on your system.
+
 ### 1. Add global resource directory to your project
 
 The global resource dir is introduced by using git subtree mechanism. This keeps the training repository clear from
@@ -118,13 +120,13 @@ make image RUNTIME=podman
 ### Run showoff
 
 ```bash
-docker run -it --rm -v "$PWD:/training" -p "9090:9090" netways/showoff:0.20.3
+docker run -it --rm -v "$PWD:/training" -p "9090:9090" netways/showoff:0.20.4
 ```
 
 ### Build static html files
 
 ```bash
-docker run -it --rm -v "$PWD:/training" netways/showoff:0.20.3 \
+docker run -it --rm -v "$PWD:/training" netways/showoff:0.20.4 \
   showoff static print
 ```
 
@@ -132,7 +134,7 @@ docker run -it --rm -v "$PWD:/training" netways/showoff:0.20.3 \
 
 ```bash
 docker run -it --rm -v "$PWD:/training" \
-  netways/showoff:0.20.3 \
+  netways/showoff:0.20.4 \
   wkhtmltopdf -s A5 --print-media-type \
   --footer-left \[page\] --footer-right '© NETWAYS' \
   static/index.html test.pdf
