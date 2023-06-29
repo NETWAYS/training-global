@@ -38,11 +38,12 @@ RUN set -ex; \
 
 # Install showoff Gem
 ARG showoff_version=0.20.4
-RUN gem install showoff --version="$showoff_version"
-
-# uri v0.11.0 (installed as dependency for showoff) contains a CVE
-# so we upgrade, delete the default, and clean up
-RUN gem update uri && rm /usr/lib/ruby/gems/3.1.0/specifications/default/uri-0.11.0.gemspec && gem cleanup uri
+RUN set -ex; \
+    gem install showoff --version="$showoff_version" \
+    # uri v0.11.0 (installed as dependency for showoff) contains CVE-2023-28755
+    # so we upgrade and delete the default manually. This might be removed in the future
+    # Note that the Ruby 3.1.0 path might change when updating the distro
+    && GEM_HOME=/usr/lib/ruby/gems/3.1.0/ gem install --default uri; rm -f /usr/lib/ruby/gems/3.1.0/specifications/default/uri-0.11*;
 
 EXPOSE 9090
 
