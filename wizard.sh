@@ -15,12 +15,18 @@ execdocker () {
     $RUNTIME rm -f $CNAME 2> /dev/null
   fi
 
+  case $RUNTIME in
+      *podman*) USERNS=keep-id;;
+      *)        USERNS=host;;
+  esac
+
   $RUNTIME run \
     -it \
     --name=$CNAME \
     --rm \
     -p 9090:9090 \
     --user $(id -u) \
+    --userns=$USERNS \
     -v "$DIR:/training:z" \
     -e "LANG=$CLANG" \
     -e "LANGUAGE=$CLANG" \
