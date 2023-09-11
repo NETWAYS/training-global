@@ -59,4 +59,5 @@
 | Fenster horizontal teilen | `Ctrl + b %` |
 | Fenster vertikal teilen | `Ctrl + b "` |
 | Zum nächsten Fenster wechseln | `Ctrl + b o` |
+| Vollbildmodus wechseln | `Ctrl + b z` |
 | Aktuelles Fenster schließen | `Ctrl + b x` |

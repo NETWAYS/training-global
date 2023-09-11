@@ -59,4 +59,5 @@
 | Split pane with horizontal layout | `Ctrl + b %` |
 | Split pane with vertical layout | `Ctrl + b "` |
 | Switch to next pane | `Ctrl + b o` |
+| Toggle fullscreen on current pane | `Ctrl + b z` |
 | Close current pane | `Ctrl + b x` |
