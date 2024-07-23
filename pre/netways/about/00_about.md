@@ -44,4 +44,4 @@
 !SLIDE noprint
 # NETWAYS Trainings & Workshops
 
-<center><img src="../_images/overview_trainings.png" style="width:720px;height:590px;" alt="NETWAYS Trainings & Workshops"/></center>
+<center><img src="../_images/overview_trainings.png" style="width:75%;height:75%;" alt="NETWAYS Trainings & Workshops"/></center>
